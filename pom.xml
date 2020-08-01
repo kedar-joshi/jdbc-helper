@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.workingtheory.helpers</groupId>
+	<artifactId>jdbc-helper</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<!-- This module will be packaged as JAR -->
+	<packaging>jar</packaging>
+
+	<name>JDBC Helper</name>
+	<description>Project for JDBC helper utilities</description>
+
+	<!-- Project modules -->
+	<modules>
+	</modules>
+
+	<!-- Build and plugin configuration -->
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<!-- Maven resource filtering plugin configuration -->
+		<resources>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>log4j2.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<!-- Maven clean plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven.clean-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven compiler plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Maven install plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven.resource-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven install plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>${maven.install-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven deploy plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven.deploy-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven JAR plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven.jar-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven site plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven.site-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven surefire plugin configuration for unit testing -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire-plugin.version}</version>
+			</plugin>
+
+			<!-- Maven failsafe plugin configuration for integration testing -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven.failsafe-plugin.version}</version>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+	<!-- Project properties -->
+	<properties>
+
+		<!-- Plugins -->
+		<maven.clean-plugin.version>3.1.0</maven.clean-plugin.version>
+		<maven.compiler-plugin.version>3.8.1</maven.compiler-plugin.version>
+		<maven.resource-plugin.version>3.1.0</maven.resource-plugin.version>
+		<maven.install-plugin.version>3.0.0-M1</maven.install-plugin.version>
+		<maven.deploy-plugin.version>3.0.0-M1</maven.deploy-plugin.version>
+		<maven.jar-plugin.version>3.2.0</maven.jar-plugin.version>
+		<maven.site-plugin.version>3.9.1</maven.site-plugin.version>
+		<maven.surefire-plugin.version>3.0.0-M5</maven.surefire-plugin.version>
+		<maven.failsafe-plugin.version>3.0.0-M5</maven.failsafe-plugin.version>
+
+		<!-- Compiler -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<java.version>14</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+	</properties>
+
+	<!-- Managed dependencies -->
+	<dependencyManagement>
+		<dependencies>
+
+		</dependencies>
+	</dependencyManagement>
+</project>
