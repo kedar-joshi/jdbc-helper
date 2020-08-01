@@ -43,6 +43,27 @@
 
 		<plugins>
 
+			<!-- Maven checkstyle plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${maven.checkstyle-plugin.version}</version>
+
+				<configuration>
+					<configLocation>src/main/resources/checkstyle.xml</configLocation>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- Maven clean plugin configuration -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -118,6 +139,7 @@
 	<properties>
 
 		<!-- Plugins -->
+		<maven.checkstyle-plugin.version>3.1.1</maven.checkstyle-plugin.version>
 		<maven.clean-plugin.version>3.1.0</maven.clean-plugin.version>
 		<maven.compiler-plugin.version>3.8.1</maven.compiler-plugin.version>
 		<maven.resource-plugin.version>3.1.0</maven.resource-plugin.version>
